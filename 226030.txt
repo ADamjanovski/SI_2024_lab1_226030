@@ -1,0 +1,285 @@
+4. git init
+ 	Се иницијализира локалното репо.
+5. git remote add origin https://github.com/ADamjanovski/SI_2024_lab1_226030.git
+	Го поврзуваме локалното репо со remote репо.
+6. nano README.md
+     git add README.md   
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+    
+Фајлот README.md се префрла од untracked во staged.
+     git commit -m “Initial commit”
+	[master (root-commit) b39c25e] Initial commit
+ 	1 file changed, 1 insertion(+)
+ 	create mode 100644 README.md
+ 
+  Се извршува првиот commit.
+
+7. git add .
+ warning: in the working copy of 'SILab1Main.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'SILab1_1.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'SILab1_2.java', LF will be replaced by CRLF the next time Git touches it
+
+        Ги додаваме сите фајлови кои биле untracked или modified во staged.
+     git commit -m “Add starter code”
+	[master 3c33e33] Add starter code
+ 	3 files changed, 47 insertions(+)
+ 	create mode 100644 SILab1Main.java
+ 	create mode 100644 SILab1_1.java
+ 	create mode 100644 SILab1_2.java
+
+     Правиме commit на почетниот код.
+ 8. git push -u origin master
+	Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 1.15 KiB | 1.15 MiB/s, don.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ADamjanovski/SI_2024_lab1_226030.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+    Ги пушнуваме сите commits на remote репото.
+
+9. git branch bug1
+   git branch bug2
+
+   Создаваме две нови гранки bug1 и bug2 
+
+10. git checkout bug1
+	Switched to branch 'bug1'
+   Се префрламе во гранката bug1.
+
+11. vim SILab1_1.java
+	
+    Ја поправам грешката во функцијата.
+
+    git add SILab1_1.java
+warning: in the working copy of 'SILab1_1.java', LF will be replaced by CRLF the next time Git touches it	
+
+    Го префрла фајлот SILab1_1.java од modified во staged.
+     
+    git commit -m “Fix wrong condition in filterOddLengthStrings”
+	
+[bug1 231e8da] Fix wrong condition in filterOddLengthStrings
+ 	1 file changed, 2 insertions(+), 2 deletions(-)
+    
+    Додава commit на гранката bug1.
+
+
+12. git checkout bug2
+
+    Се префрла во гранката bug2.
+
+13. vim SILab1_2.java
+
+    Ја поправам грешката во функцијата.
+    
+    git add SILab1_2.java
+
+
+    Го префрла фајлот SILab1_2.java од modified во staged.
+
+
+    git commit -m "Fix wrong condition in makeBigStringForm"
+
+[bug2 3e48bcb] Fix wrong condition in makeBigStringForm
+ 	1 file changed, 2 insertions(+), 2 deletions(-)
+
+    Додава commit на гранката bug2.
+
+
+14. git checkout bug1
+
+    Се префрла на гранката bug1.
+
+15. git add SILab1Main.java
+
+    Го префрла фајлот SILab1Main.java од modified во staged на гранката bug1.
+
+    git commit -m "Call method filterOddLengthStrings in main class"
+
+[bug1 c81c81a] Call method filterOddLengthStrings in main class
+ 	1 file changed, 2 insertions(+), 1 deletion(-)
+
+    Го префрла фајлот SILab1Main.java од modified во staged на гранката bug1.
+
+    git commit -m "Call method filterOddLengthStrings in main class"
+
+[bug1 c81c81a] Call method filterOddLengthStrings in main class
+ 	1 file changed, 2 insertions(+), 1 deletion(-)
+
+    Додава commit на гранката bug1.
+
+
+16. git checkout bug2
+
+    Се префрла на гранката bug2.
+
+17. git add SILab1Main.java
+
+    Го префрла фајлот SILab1Main.java од modified во staged на гранката bug2.
+
+    
+    git commit -m "Call method makeBigStringFrom in main class"
+
+	[bug2 6628b4e] Call method makeBigStringFrom in main class
+ 	1 file changed, 2 insertions(+), 1 deletion(-)
+
+    Додава commit на гранката bug2.
+
+18. git push origin bug2
+    
+
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 688 bytes | 688.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'bug2' on GitHub by visiting:
+remote:      https://github.com/ADamjanovski/SI_2024_lab1_226030/pull/new/bug2
+remote:
+To https://github.com/ADamjanovski/SI_2024_lab1_226030.git
+ * [new branch]      bug2 -> bug2
+
+  Ги пушнува сите нови комити на гранка bug2 од локалното репо на remote репо гранка bug2.
+
+  git push origin bug1
+
+$ git push origin bug1
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 746 bytes | 746.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'bug1' on GitHub by visiting:
+remote:      https://github.com/ADamjanovski/SI_2024_lab1_226030/pull/new/bug1
+remote:
+To https://github.com/ADamjanovski/SI_2024_lab1_226030.git
+ * [new branch]      bug1 -> bug1
+
+
+Ги пушнува сите нови комити на гранка bug1 од локалното репо на remote репо гранка bug1.  
+      
+        git push origin master
+
+ Everything up-to-date
+
+Нема нови комити на гранката master.
+
+19.     git checkout master
+Се префрла на master гранката.
+20.    git merge bug1
+Updating 3c33e33..c81c81a
+Fast-forward
+ SILab1Main.java | 3 ++-
+ SILab1_1.java   | 4 ++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+Ги додава дополнителните commits од гранка bug1 на master интегрирајќи ги во нов commit на master.
+
+21. git push origin master
+
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ADamjanovski/SI_2024_lab1_226030.git
+   3c33e33..c81c81a  master -> master
+
+Ги пушнува новите commits од гранката master од локалното репо на remote репозиториумот.
+
+     git push origin bug1
+
+Everything up-to-date
+
+    git push origin bug2
+
+Everything up-to-date
+
+22. git checkout bug2
+
+Се префрла на гранката bug2.
+
+23. git rebase master
+
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply 6628b4e... Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 6628b4e... Call method makeBigStringFrom in main class
+
+    Ги поместува сите комити направени на тековната гранка врз крајот на гранката master за да изгледа како комитите да се случувале серијално но има конфликти во SILab1Main.java.
+
+    git add SILab1Main.java
+
+Ги решавам конфликитите и ја префрлам SILab1Main.java во staged  
+
+    git rebase --continue
+
+[detached HEAD 86244c2] Call method makeBigStringFrom in main class
+ 6 files changed, 41 insertions(+)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 SI_2024_lab1_226030.iml
+Successfully rebased and updated refs/heads/bug2.
+
+Продолжува со rebase.
+
+24. git checkout master
+
+	Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Се префрла на гранката master. 
+25. git merge bug2
+
+Updating c81c81a..86244c2
+Fast-forward
+ .idea/.gitignore        |  8 ++++++++
+ .idea/misc.xml          |  6 ++++++
+ .idea/modules.xml       |  8 ++++++++
+ .idea/vcs.xml           |  6 ++++++
+ SILab1Main.java         |  2 ++
+ SILab1_2.java           |  4 ++--
+ SI_2024_lab1_226030.iml | 11 +++++++++++
+ 7 files changed, 43 insertions(+), 2 deletions(-)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 SI_2024_lab1_226030.iml
+
+Ги додава commits на гранката bug2 во гранката master интегрирајќи ги во нов commit на master.
+
+26. git push origin bug2 --force
+    
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (12/12), 1.75 KiB | 1.75 MiB/s, done.
+Total 12 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/ADamjanovski/SI_2024_lab1_226030.git
+ + 6628b4e...86244c2 bug2 -> bug2 (forced update)
+
+   Присилно праќање на гранката bug2 од локалното репо на remote репо.
+
+    git push origin master
+
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ADamjanovski/SI_2024_lab1_226030.git
+   c81c81a..86244c2  master -> master
+
+    git push origin bug1
+
+Everything up-to-date
